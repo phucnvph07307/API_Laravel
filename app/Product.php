@@ -14,6 +14,7 @@ class Product extends Model
         'price_sale',
         'short_desc',
         'detail',
-        'cate_id'
+        'cate_id',
+        'quantity'
     ];
 }
