@@ -19,4 +19,6 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 });
 Route::resource('product', 'ProductController');
 Route::resource('category', 'CategoryController');
+Route::resource('invoice', 'InvoiceController');
+Route::resource('invoice_detail', 'InvoiceDetailController');
 Route::post('login','AuthController@login');
