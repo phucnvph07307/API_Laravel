@@ -18,6 +18,11 @@ class ProductController extends Controller
         return response()->json($data, 200);
     }
 
+    public function getAllProductsClient()
+    {
+        $data = Product::where('quantity','>',0)->get();
+        return response()->json($data, 200);
+    }
     /**
      * Show the form for creating a new resource.
      *
