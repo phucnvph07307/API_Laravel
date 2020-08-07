@@ -15,4 +15,8 @@ class Invoice extends Model
         'message',
         'total_price'
     ];
+    public function invoice_detail()
+    {
+        return $this->hasMany('App\InvoiceDetail','invoice_id','id');
+    }
 }

@@ -23,7 +23,7 @@ class InvoiceController extends Controller
 
     public function show($id)
     {
-        $data = Invoice::find($id);
+        $data = Invoice::find($id)->invoice_detail;
         return response()->json($data, 200);
     }
 
@@ -33,4 +33,5 @@ class InvoiceController extends Controller
         $data->update($request->all());
         return response()->json($data, 200);
     }
+
 }
