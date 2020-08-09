@@ -9,7 +9,13 @@ class CategoryController extends Controller
 {
     public function index()
     {
+     
         $data = Category::all();
+        return response()->json($data, 200);
+    }
+    public function getAll()
+    {
+        $data = Category::paginate(5);
         return response()->json($data, 200);
     }
 

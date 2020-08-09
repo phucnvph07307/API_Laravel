@@ -20,7 +20,7 @@ class ProductController extends Controller
 
     public function getAllProductsClient()
     {
-        $data = Product::where('quantity','>',0)->get();
+        $data = Product::where('quantity','>',0)->where('status',1)->get();
         return response()->json($data, 200);
     }
     /**

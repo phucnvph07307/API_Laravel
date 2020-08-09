@@ -19,6 +19,7 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 });
 Route::resource('product', 'ProductController');
 Route::get('get_all_products_client','ProductController@getAllProductsClient');
+Route::get('get_all_categories','CategoryController@getAll');
 Route::resource('category', 'CategoryController');
 Route::resource('invoice', 'InvoiceController');
 Route::resource('invoice_detail', 'InvoiceDetailController');
