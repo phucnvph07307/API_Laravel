@@ -3,48 +3,43 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Category;
-use App\Product;
-
-class CategoryController extends Controller
+use App\News;
+class NewController extends Controller
 {
     public function index()
     {
      
-        $data = Category::all();
-        return response()->json($data, 200);
-    }
-    public function getAll()
-    {
-        $data = Category::paginate(5);
+        $data = News::all();
         return response()->json($data, 200);
     }
 
+
     public function store(Request $request)
     {
-        $data = new Category;
-        $data->fill($request->all());
-        $data->save();
+        $data = News::create([
+            'email' => "am@gmail.com",
+            'message' => "jdhfd" 
+        ]);
+     
         return response()->json($data, 201);
     }
 
     public function show($id)
     {
-        $data = Category::find($id);
+        $data = News::find($id);
         return response()->json($data, 200);
     }
 
     public function update(Request $request, $id)
     {
-        $data = Category::findOrFail($id);
+        $data = News::findOrFail($id);
         $data->update($request->all());
         return response()->json($data, 200);
     }
 
     public function destroy($id)
     {
-        Product::where('cate_id','=',$id)->update(['cate_id' => 1]);
-        $data = Category::findOrFail($id);
+        $data = News::findOrFail($id);
         $data->delete();
         return response()->json(null, 204);
     }

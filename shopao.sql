@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Aug 09, 2020 at 07:04 PM
+-- Generation Time: Aug 11, 2020 at 07:37 PM
 -- Server version: 10.1.38-MariaDB
 -- PHP Version: 7.3.2
 
@@ -43,7 +43,8 @@ CREATE TABLE `categories` (
 --
 
 INSERT INTO `categories` (`id`, `cate_name`, `slug`, `description`, `created_at`, `updated_at`, `created_by`) VALUES
-(31, 'Men', NULL, '<p><strong>Các sản phẩm dành cho nam giới</strong></p>', '2020-08-09 07:26:14', '2020-08-09 07:26:14', -1),
+(1, 'Un Category', NULL, '<p><strong>Đây là danh mục mặc định</strong></p>', '2020-08-11 06:59:40', '2020-08-11 07:01:01', -1),
+(31, 'Men', NULL, '<p><strong>Các sản phẩm dành cho nam giới ạ</strong></p>', '2020-08-09 07:26:14', '2020-08-09 10:15:02', -1),
 (32, 'WOMEN', NULL, '<p><strong>Các sản phẩm danhc cho nữ giới</strong></p>', '2020-08-09 07:26:41', '2020-08-09 07:26:41', -1),
 (33, 'Children', NULL, '<p>Dành cho trẻ em</p>', '2020-08-09 07:27:21', '2020-08-09 07:27:21', -1),
 (34, 'Kids', NULL, '<p>Trẻ em&nbsp;</p>', '2020-08-09 07:27:39', '2020-08-09 07:27:39', -1),
@@ -51,8 +52,29 @@ INSERT INTO `categories` (`id`, `cate_name`, `slug`, `description`, `created_at`
 (36, 'Ao', NULL, '<p>Các loại váy</p>', '2020-08-09 07:28:48', '2020-08-09 07:28:48', -1),
 (37, 'Quan Nam', NULL, '<p>CÁC LẠI QUAN NAM</p>', '2020-08-09 07:29:10', '2020-08-09 07:29:10', -1),
 (41, 'My Pham', NULL, '<p>Các loại mỹ phẩm cao cấp</p>', '2020-08-09 07:32:28', '2020-08-09 07:32:28', -1),
-(43, 'Giay', NULL, '<p>GIẦY THỂ THAO</p>', '2020-08-09 07:33:17', '2020-08-09 07:33:17', -1),
-(44, 'Phu Kien', NULL, '<p>Đống phụ kiện</p>', '2020-08-09 08:38:14', '2020-08-09 08:38:14', -1);
+(43, 'Giay', NULL, '<p>GIẦY THỂ THAO</p>', '2020-08-09 07:33:17', '2020-08-09 07:33:17', -1);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `contacts`
+--
+
+CREATE TABLE `contacts` (
+  `id` int(11) NOT NULL,
+  `email` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `message` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `contacts`
+--
+
+INSERT INTO `contacts` (`id`, `email`, `message`, `created_at`, `updated_at`) VALUES
+(13, 'admin@gmail.com', 'liên hệ 09851013322', '2020-08-11 08:20:23', '2020-08-11 08:20:23'),
+(14, 'phuc@gmail.com', 'ok bạn', '2020-08-11 08:20:38', '2020-08-11 08:20:38');
 
 -- --------------------------------------------------------
 
@@ -80,7 +102,8 @@ CREATE TABLE `invoices` (
 INSERT INTO `invoices` (`id`, `customer_name`, `customer_phone_number`, `customer_email`, `customer_address`, `message`, `total_price`, `payment_method`, `created_at`, `updated_at`) VALUES
 (7, 'Nguyen Van Phuc', '0342525777', 'phucnv@gmal.com', 'hanoi, viet nam', 'cảm ơn shop !', 2283, 1, '2020-08-09 09:46:57', '2020-08-09 09:46:57'),
 (8, 'Hieu Pham', '0985101322', 'admin@gmail.com', 'hanoi, viet nam', 'ok ạ', 2190, 1, '2020-08-09 09:48:13', '2020-08-09 09:48:13'),
-(9, 'Long Nguyen', '0342525777', 'long@gmail.com', 'hanoi, viet nam', 'ok ạ', 99, 1, '2020-08-09 10:02:51', '2020-08-09 10:02:51');
+(9, 'Long Nguyen', '0342525777', 'long@gmail.com', 'hanoi, viet nam', 'ok ạ', 99, 1, '2020-08-09 10:02:51', '2020-08-09 10:02:51'),
+(10, 'Nam Nguyen', '0985101322', 'nam@gmail.com', 'hanoi, viet nam', 'ok ạ', 99, 1, '2020-08-09 19:35:22', '2020-08-09 19:35:22');
 
 -- --------------------------------------------------------
 
@@ -111,7 +134,8 @@ INSERT INTO `invoice_detail` (`invoice_id`, `product_id`, `quantity`, `unit_pric
 (7, 153, 3, 100, '2020-08-09 09:47:32', '2020-08-09 09:47:32'),
 (8, 154, 1, 190, '2020-08-09 09:48:14', '2020-08-09 09:48:14'),
 (8, 155, 1, 2000, '2020-08-09 09:48:18', '2020-08-09 09:48:18'),
-(9, 142, 1, 99, '2020-08-09 10:02:52', '2020-08-09 10:02:52');
+(9, 142, 1, 99, '2020-08-09 10:02:52', '2020-08-09 10:02:52'),
+(10, 141, 1, 99, '2020-08-09 19:35:23', '2020-08-09 19:35:23');
 
 -- --------------------------------------------------------
 
@@ -139,6 +163,30 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 (8, '2019_01_05_075449_create_invoice_detail_table', 4),
 (9, '2019_01_12_014833_alter_table_products_add_views_column', 5),
 (10, '2019_01_12_021523_create_table_product_galleries', 6);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `news`
+--
+
+CREATE TABLE `news` (
+  `id` int(11) NOT NULL,
+  `title` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `image` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `description` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `detail` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `news`
+--
+
+INSERT INTO `news` (`id`, `title`, `image`, `description`, `detail`, `created_at`, `updated_at`) VALUES
+(1, '8 Inspiring Ways to Wear Dresses in the Winter', 'data:image/png;base64,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', 'fghf', 'Người hâm mộ không ngại chi nhiều tiền để có thể diện đồ đôi cùng các thành viên nhóm BTS.\r\nJungKook mac ao Louis Vuitton anh 1\r\nTối 10/8 lúc 22h (giờ Việt Nam), BTS đăng tải bộ hình teaser cho sản phẩm mới. Đúng như tên gọi \"thánh sold out\", chiếc áo khoác Denim Zip Through Hoodie của thương hiệu Louis Vuitton mà Jungkook diện nhanh chóng được bán hết chỉ sau hơn 2 giờ. Sản phẩm có giá 2.350 USD hết tất cả size tại 16 quốc gia. Điều này một lần nữa chứng minh mức độ nổi tiếng của em út BTS là \"không phải dạng vừa\". Ảnh: @bts.wearing.\r\nJungKook mac ao Louis Vuitton anh 2\r\nPhụ kiện tạo nên điểm nhấn cho trang phục denim của Jungkook chính là vòng cổ với họa tiết lạ mắt có giá bán hơn 202 USD. Ảnh: @bangtan_outfit.\r\nJungKook mac ao Louis Vuitton anh 3\r\nCũng diện set denim nhưng giọng ca chính của BTS chọn gam màu nhạt hơn với điểm nhấn màu sắc nổi bật ở túi áo, cổ áo và thân quần. Để tổng thể hài hòa, không bị chói mắt, Jimin kết hợp cùng áo phông loang màu trắng xanh cùng dây chuyền bản nhỏ. Tổng set đồ của anh được bán với giá hơn 1.454 USD. Ảnh: @bangtan_outfit.\r\nJungKook mac ao Louis Vuitton anh 4\r\nSuga cũng \"rơi vào trường hợp tương tự\" em út JungKook khi sản phẩm lập tức sold out ngay khi bộ ảnh tung ra. Chiếc áo 1.280 USD có tên Leaf Denim Baseball Shirt được ARMY (tên fanclub của BTS) nhanh chóng săn lùng và đặt hàng hết các size. Ảnh: @bts.wearing.\r\nJungKook mac ao Louis Vuitton anh 5\r\nThuộc top 5 gương mặt đẹp trai nhất thế giới, V không làm người hâm mộ thất vọng khi xuất hiện với hình ảnh lãng tử cùng kiểu tóc mullet nâu vàng. Những món phụ kiện được giọng ca sinh năm 1995 diện thường có họa tiết cách điệu, độc đáo. Trên hình, vòng cổ và hoa tai có màu sắc rực rỡ với giá thành 91 USD là minh chứng cho điều đó. Ảnh: @bangtan_outfit.\r\nJungKook mac ao Louis Vuitton anh 6\r\nSau khi bức ảnh teaser được đăng tải, từ khóa tìm kiếm về RM và màu tóc của anh nhanh chóng lên top thịnh hành. Nam thần tượng chia tóc theo tỷ lệ 7:3, vuốt ngược ra phía sau, đồng thời giữ một phần tóc phía trước tạo điểm nhấn lịch lãm. Món phụ kiện vòng cổ màu bạc nhóm trưởng BTS đeo có giá 150 USD đơn giản nhưng không kém phần sành điệu. Ảnh: @bangtan_outfit.', '2020-08-11 17:00:00', NULL),
+(2, 'Áo khoác Louis Vuitton 2.350 USD cháy hàng nhờ Jungkook', 'data:image/jpeg;base64,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', 'fds', 'Người hâm mộ không ngại chi nhiều tiền để có thể diện đồ đôi cùng các thành viên nhóm BTS.\r\nJungKook mac ao Louis Vuitton anh 1\r\nTối 10/8 lúc 22h (giờ Việt Nam), BTS đăng tải bộ hình teaser cho sản phẩm mới. Đúng như tên gọi \"thánh sold out\", chiếc áo khoác Denim Zip Through Hoodie của thương hiệu Louis Vuitton mà Jungkook diện nhanh chóng được bán hết chỉ sau hơn 2 giờ. Sản phẩm có giá 2.350 USD hết tất cả size tại 16 quốc gia. Điều này một lần nữa chứng minh mức độ nổi tiếng của em út BTS là \"không phải dạng vừa\". Ảnh: @bts.wearing.\r\nJungKook mac ao Louis Vuitton anh 2\r\nPhụ kiện tạo nên điểm nhấn cho trang phục denim của Jungkook chính là vòng cổ với họa tiết lạ mắt có giá bán hơn 202 USD. Ảnh: @bangtan_outfit.\r\nJungKook mac ao Louis Vuitton anh 3\r\nCũng diện set denim nhưng giọng ca chính của BTS chọn gam màu nhạt hơn với điểm nhấn màu sắc nổi bật ở túi áo, cổ áo và thân quần. Để tổng thể hài hòa, không bị chói mắt, Jimin kết hợp cùng áo phông loang màu trắng xanh cùng dây chuyền bản nhỏ. Tổng set đồ của anh được bán với giá hơn 1.454 USD. Ảnh: @bangtan_outfit.\r\nJungKook mac ao Louis Vuitton anh 4\r\nSuga cũng \"rơi vào trường hợp tương tự\" em út JungKook khi sản phẩm lập tức sold out ngay khi bộ ảnh tung ra. Chiếc áo 1.280 USD có tên Leaf Denim Baseball Shirt được ARMY (tên fanclub của BTS) nhanh chóng săn lùng và đặt hàng hết các size. Ảnh: @bts.wearing.\r\nJungKook mac ao Louis Vuitton anh 5\r\nThuộc top 5 gương mặt đẹp trai nhất thế giới, V không làm người hâm mộ thất vọng khi xuất hiện với hình ảnh lãng tử cùng kiểu tóc mullet nâu vàng. Những món phụ kiện được giọng ca sinh năm 1995 diện thường có họa tiết cách điệu, độc đáo. Trên hình, vòng cổ và hoa tai có màu sắc rực rỡ với giá thành 91 USD là minh chứng cho điều đó. Ảnh: @bangtan_outfit.\r\nJungKook mac ao Louis Vuitton anh 6\r\nSau khi bức ảnh teaser được đăng tải, từ khóa tìm kiếm về RM và màu tóc của anh nhanh chóng lên top thịnh hành. Nam thần tượng chia tóc theo tỷ lệ 7:3, vuốt ngược ra phía sau, đồng thời giữ một phần tóc phía trước tạo điểm nhấn lịch lãm. Món phụ kiện vòng cổ màu bạc nhóm trưởng BTS đeo có giá 150 USD đơn giản nhưng không kém phần sành điệu. Ảnh: @bangtan_outfit.', '2020-08-04 17:00:00', NULL);
 
 -- --------------------------------------------------------
 
@@ -193,9 +241,9 @@ INSERT INTO `products` (`id`, `name`, `image`, `cate_id`, `price`, `quantity`, `
 (151, 'Quan Short Kaki 01', 'https://firebasestorage.googleapis.com/v0/b/reactjs-8c7de.appspot.com/o/images%2F8bs20s015-sg265-m-12.jpg?alt=media&token=54ee27af-a711-4d13-8b15-dbb650e5c7ae', 31, 200, 2222, 180, '<p>Đơn giản, thoải mái, phù hợp nhiều hoàn cảnh.<br>Thích hợp mặc quanh năm.<br>Có thể kết hợp với áo phông…với sandal, giày thể thao…</p>', '<p><a href=\"https://canifa.com/catalog/product/view/id/209111/s/quan-shorts-nam-8bs20s015/category/581/#product-detail-tab-content-1\">MÔ TẢ</a></p><p>Quần sóoc trơn, chất liệu cotton pha.<br>Phom regular, dáng lửng.<br>Túi chéo.</p><p><a href=\"https://canifa.com/catalog/product/view/id/209111/s/quan-shorts-nam-8bs20s015/category/581/#product-detail-tab-content-5\">HOÀN CẢNH SỬ DỤNG</a></p><p>Đơn giản, thoải mái, phù hợp nhiều hoàn cảnh.<br>Thích hợp mặc quanh năm.<br>Có thể kết hợp với áo phông…với sandal, giày thể thao…</p><p><a href=\"https://canifa.com/catalog/product/view/id/209111/s/quan-shorts-nam-8bs20s015/category/581/#product-detail-tab-content-2\">CHẤT LIỆU</a></p><p>55% linen 45% cotton.</p><p><a href=\"https://canifa.com/catalog/product/view/id/209111/s/quan-shorts-nam-8bs20s015/category/581/#product-detail-tab-content-3\">HƯỚNG DẪN SỬ DỤNG</a></p><p>Giặt máy ở nhiệt độ thường.<br>Không sử dụng hóa chất tẩy có chứa clo.<br>Phơi trong bóng mátSấy khô ở nhiệt độ thấp.<br>Là ở nhiệt độ trung bình 150 độ C.<br>Giặt với sản phẩm cùng màu.<br>Không là lên chi tiết trang trí.</p><p><a href=\"https://canifa.com/catalog/product/view/id/209111/s/quan-shorts-nam-8bs20s015/category/581/#product-detail-tab-content-4\">THÔNG SỐ NGƯỜI MẪU</a></p><p>Chiều cao: 182cm<br>Cân nặng: 71kg<br>Mặc quần size: 30</p>', 0.00, 1, '2020-08-09 08:14:50', '2020-08-09 08:14:50', 1),
 (152, 'Quan Short Kaki 02', 'https://firebasestorage.googleapis.com/v0/b/reactjs-8c7de.appspot.com/o/images%2F8bs20s020-sj109-30-.jpg?alt=media&token=8a18d8d2-b5d8-4ccb-af44-38e0a575b814', 31, 300, 200, 280, '<p>Đơn giản, thoải mái, phù hợp nhiều hoàn cảnh.<br>Thích hợp mặc quanh năm.<br>Có thể kết hợp với áo phông…với sandal, giày thể thao…</p>', '<p><a href=\"https://canifa.com/catalog/product/view/id/209111/s/quan-shorts-nam-8bs20s015/category/581/#product-detail-tab-content-1\">MÔ TẢ</a></p><p>Quần sóoc trơn, chất liệu cotton pha.<br>Phom regular, dáng lửng.<br>Túi chéo.</p><p><a href=\"https://canifa.com/catalog/product/view/id/209111/s/quan-shorts-nam-8bs20s015/category/581/#product-detail-tab-content-5\">HOÀN CẢNH SỬ DỤNG</a></p><p>Đơn giản, thoải mái, phù hợp nhiều hoàn cảnh.<br>Thích hợp mặc quanh năm.<br>Có thể kết hợp với áo phông…với sandal, giày thể thao…</p><p><a href=\"https://canifa.com/catalog/product/view/id/209111/s/quan-shorts-nam-8bs20s015/category/581/#product-detail-tab-content-2\">CHẤT LIỆU</a></p><p>55% linen 45% cotton.</p><p><a href=\"https://canifa.com/catalog/product/view/id/209111/s/quan-shorts-nam-8bs20s015/category/581/#product-detail-tab-content-3\">HƯỚNG DẪN SỬ DỤNG</a></p><p>Giặt máy ở nhiệt độ thường.<br>Không sử dụng hóa chất tẩy có chứa clo.<br>Phơi trong bóng mátSấy khô ở nhiệt độ thấp.<br>Là ở nhiệt độ trung bình 150 độ C.<br>Giặt với sản phẩm cùng màu.<br>Không là lên chi tiết trang trí.</p><p><a href=\"https://canifa.com/catalog/product/view/id/209111/s/quan-shorts-nam-8bs20s015/category/581/#product-detail-tab-content-4\">THÔNG SỐ NGƯỜI MẪU</a></p><p>Chiều cao: 182cm<br>Cân nặng: 71kg<br>Mặc quần size: 30</p>', 0.00, 1, '2020-08-09 08:15:21', '2020-08-09 08:15:21', 1),
 (153, 'Product S', 'https://firebasestorage.googleapis.com/v0/b/reactjs-8c7de.appspot.com/o/images%2Fitem-cart-02.jpg?alt=media&token=5bb2b0fe-c967-4525-9896-9823f7b38240', 43, 200, 1111, 100, '<p>Hiện sản phẩm chỉ còn ở cửa hàng</p>', '<p><a href=\"https://canifa.com/nu/danh-muc-san-pham/ao-phong-khong-co/ao-phong-nu-co-ban-co-tron-6ts19a001.html#product-detail-tab-content-1\">MÔ TẢ</a></p><p>Áo phông chất liệuSingle 95% cotton 5% spandex.<br>Phom dáng Regular fit, cổ tròn, tay ngắn.<br>Hàng basic. Phù hợp mặc quanh năm, thoải mái, dễ dàng.<br>Dễ kết hợp&nbsp; với chân váy, quần denim, khaki, giày thể thao</p><p><a href=\"https://canifa.com/nu/danh-muc-san-pham/ao-phong-khong-co/ao-phong-nu-co-ban-co-tron-6ts19a001.html#product-detail-tab-content-2\">CHẤT LIỆU</a></p><p><strong>95% cotton 5% spandex</strong></p><p>HƯỚNG DẪN SỬ DỤNG</p><p>Giặt máy ở chế độ nhẹ, nhiệt độ thường.<br>không sử dụng hóa chất tẩy có chứa clo.<br>Phơi trong bóng mát.<br>Sấy khô ở nhiệt độ thường.<br>Là ở nhiệt độ thấp 110 độ c.<br>Giặt với sản phẩm cùng màu.<br>Không là lên chi tiết trang trí</p><p><a href=\"https://canifa.com/nu/danh-muc-san-pham/ao-phong-khong-co/ao-phong-nu-co-ban-co-tron-6ts19a001.html#product-detail-tab-content-4\">THÔNG SỐ NGƯỜI MẪU</a></p><p>Chiều cao: 174cm<br>Cân nặng: 48kg<br>Mặc áo size: M</p>', 0.00, 1, '2020-08-09 08:36:32', '2020-08-09 08:36:32', 1),
-(154, 'Dong Ho', 'https://firebasestorage.googleapis.com/v0/b/reactjs-8c7de.appspot.com/o/images%2Fproduct-15.jpg?alt=media&token=50e2855c-75ff-4cd7-b28d-8c9d25dec81d', 44, 200, 2000, 190, '<p>Hiện sản phẩm chỉ còn ở cửa hàng</p>', '<p><a href=\"https://canifa.com/nu/danh-muc-san-pham/ao-phong-khong-co/ao-phong-nu-co-ban-co-tron-6ts19a001.html#product-detail-tab-content-1\">MÔ TẢ</a></p><p>Áo phông chất liệuSingle 95% cotton 5% spandex.<br>Phom dáng Regular fit, cổ tròn, tay ngắn.<br>Hàng basic. Phù hợp mặc quanh năm, thoải mái, dễ dàng.<br>Dễ kết hợp&nbsp; với chân váy, quần denim, khaki, giày thể thao</p><p><a href=\"https://canifa.com/nu/danh-muc-san-pham/ao-phong-khong-co/ao-phong-nu-co-ban-co-tron-6ts19a001.html#product-detail-tab-content-2\">CHẤT LIỆU</a></p><p><strong>95% cotton 5% spandex</strong></p><p>HƯỚNG DẪN SỬ DỤNG</p><p>Giặt máy ở chế độ nhẹ, nhiệt độ thường.<br>không sử dụng hóa chất tẩy có chứa clo.<br>Phơi trong bóng mát.<br>Sấy khô ở nhiệt độ thường.<br>Là ở nhiệt độ thấp 110 độ c.<br>Giặt với sản phẩm cùng màu.<br>Không là lên chi tiết trang trí</p><p><a href=\"https://canifa.com/nu/danh-muc-san-pham/ao-phong-khong-co/ao-phong-nu-co-ban-co-tron-6ts19a001.html#product-detail-tab-content-4\">THÔNG SỐ NGƯỜI MẪU</a></p><p>Chiều cao: 174cm<br>Cân nặng: 48kg<br>Mặc áo size: M</p>', 0.00, 1, '2020-08-09 08:37:50', '2020-08-09 08:38:34', 1),
-(155, 'Dong Ho XF', 'https://firebasestorage.googleapis.com/v0/b/reactjs-8c7de.appspot.com/o/images%2Fproduct-06.jpg?alt=media&token=baa4aab5-07f9-40bd-a2e3-3bef1e1e24d1', 44, 3000, 20, 2000, '<p>Hiện sản phẩm chỉ còn ở cửa hàng</p>', '<p><a href=\"https://canifa.com/nu/danh-muc-san-pham/ao-phong-khong-co/ao-phong-nu-co-ban-co-tron-6ts19a001.html#product-detail-tab-content-1\">MÔ TẢ</a></p><p>Áo phông chất liệuSingle 95% cotton 5% spandex.<br>Phom dáng Regular fit, cổ tròn, tay ngắn.<br>Hàng basic. Phù hợp mặc quanh năm, thoải mái, dễ dàng.<br>Dễ kết hợp&nbsp; với chân váy, quần denim, khaki, giày thể thao</p><p><a href=\"https://canifa.com/nu/danh-muc-san-pham/ao-phong-khong-co/ao-phong-nu-co-ban-co-tron-6ts19a001.html#product-detail-tab-content-2\">CHẤT LIỆU</a></p><p><strong>95% cotton 5% spandex</strong></p><p>HƯỚNG DẪN SỬ DỤNG</p><p>Giặt máy ở chế độ nhẹ, nhiệt độ thường.<br>không sử dụng hóa chất tẩy có chứa clo.<br>Phơi trong bóng mát.<br>Sấy khô ở nhiệt độ thường.<br>Là ở nhiệt độ thấp 110 độ c.<br>Giặt với sản phẩm cùng màu.<br>Không là lên chi tiết trang trí</p><p><a href=\"https://canifa.com/nu/danh-muc-san-pham/ao-phong-khong-co/ao-phong-nu-co-ban-co-tron-6ts19a001.html#product-detail-tab-content-4\">THÔNG SỐ NGƯỜI MẪU</a></p><p>Chiều cao: 174cm<br>Cân nặng: 48kg<br>Mặc áo size: M</p>', 0.00, 1, '2020-08-09 08:39:30', '2020-08-09 08:39:30', 1),
-(156, 'That Lung', 'https://firebasestorage.googleapis.com/v0/b/reactjs-8c7de.appspot.com/o/images%2Fbanner-07.jpg?alt=media&token=f87c373b-2d94-4c5b-b9e0-51b958baad15', 44, 50, 100, 40, '<p>Hiện sản phẩm chỉ còn ở cửa hàng</p>', '<p><a href=\"https://canifa.com/nu/danh-muc-san-pham/ao-phong-khong-co/ao-phong-nu-co-ban-co-tron-6ts19a001.html#product-detail-tab-content-1\">MÔ TẢ</a></p><p>Áo phông chất liệuSingle 95% cotton 5% spandex.<br>Phom dáng Regular fit, cổ tròn, tay ngắn.<br>Hàng basic. Phù hợp mặc quanh năm, thoải mái, dễ dàng.<br>Dễ kết hợp&nbsp; với chân váy, quần denim, khaki, giày thể thao</p><p><a href=\"https://canifa.com/nu/danh-muc-san-pham/ao-phong-khong-co/ao-phong-nu-co-ban-co-tron-6ts19a001.html#product-detail-tab-content-2\">CHẤT LIỆU</a></p><p><strong>95% cotton 5% spandex</strong></p><p>HƯỚNG DẪN SỬ DỤNG</p><p>Giặt máy ở chế độ nhẹ, nhiệt độ thường.<br>không sử dụng hóa chất tẩy có chứa clo.<br>Phơi trong bóng mát.<br>Sấy khô ở nhiệt độ thường.<br>Là ở nhiệt độ thấp 110 độ c.<br>Giặt với sản phẩm cùng màu.<br>Không là lên chi tiết trang trí</p><p><a href=\"https://canifa.com/nu/danh-muc-san-pham/ao-phong-khong-co/ao-phong-nu-co-ban-co-tron-6ts19a001.html#product-detail-tab-content-4\">THÔNG SỐ NGƯỜI MẪU</a></p><p>Chiều cao: 174cm<br>Cân nặng: 48kg<br>Mặc áo size: M</p>', 0.00, 1, '2020-08-09 08:40:23', '2020-08-09 09:30:35', 1);
+(154, 'Dong Ho', 'https://firebasestorage.googleapis.com/v0/b/reactjs-8c7de.appspot.com/o/images%2Fproduct-15.jpg?alt=media&token=50e2855c-75ff-4cd7-b28d-8c9d25dec81d', 1, 200, 2000, 190, '<p>Hiện sản phẩm chỉ còn ở cửa hàng</p>', '<p><a href=\"https://canifa.com/nu/danh-muc-san-pham/ao-phong-khong-co/ao-phong-nu-co-ban-co-tron-6ts19a001.html#product-detail-tab-content-1\">MÔ TẢ</a></p><p>Áo phông chất liệuSingle 95% cotton 5% spandex.<br>Phom dáng Regular fit, cổ tròn, tay ngắn.<br>Hàng basic. Phù hợp mặc quanh năm, thoải mái, dễ dàng.<br>Dễ kết hợp&nbsp; với chân váy, quần denim, khaki, giày thể thao</p><p><a href=\"https://canifa.com/nu/danh-muc-san-pham/ao-phong-khong-co/ao-phong-nu-co-ban-co-tron-6ts19a001.html#product-detail-tab-content-2\">CHẤT LIỆU</a></p><p><strong>95% cotton 5% spandex</strong></p><p>HƯỚNG DẪN SỬ DỤNG</p><p>Giặt máy ở chế độ nhẹ, nhiệt độ thường.<br>không sử dụng hóa chất tẩy có chứa clo.<br>Phơi trong bóng mát.<br>Sấy khô ở nhiệt độ thường.<br>Là ở nhiệt độ thấp 110 độ c.<br>Giặt với sản phẩm cùng màu.<br>Không là lên chi tiết trang trí</p><p><a href=\"https://canifa.com/nu/danh-muc-san-pham/ao-phong-khong-co/ao-phong-nu-co-ban-co-tron-6ts19a001.html#product-detail-tab-content-4\">THÔNG SỐ NGƯỜI MẪU</a></p><p>Chiều cao: 174cm<br>Cân nặng: 48kg<br>Mặc áo size: M</p>', 0.00, 1, '2020-08-09 08:37:50', '2020-08-11 07:12:30', 1),
+(155, 'Dong Ho XF', 'https://firebasestorage.googleapis.com/v0/b/reactjs-8c7de.appspot.com/o/images%2Fproduct-06.jpg?alt=media&token=baa4aab5-07f9-40bd-a2e3-3bef1e1e24d1', 1, 3000, 20, 2000, '<p>Hiện sản phẩm chỉ còn ở cửa hàng</p>', '<p><a href=\"https://canifa.com/nu/danh-muc-san-pham/ao-phong-khong-co/ao-phong-nu-co-ban-co-tron-6ts19a001.html#product-detail-tab-content-1\">MÔ TẢ</a></p><p>Áo phông chất liệuSingle 95% cotton 5% spandex.<br>Phom dáng Regular fit, cổ tròn, tay ngắn.<br>Hàng basic. Phù hợp mặc quanh năm, thoải mái, dễ dàng.<br>Dễ kết hợp&nbsp; với chân váy, quần denim, khaki, giày thể thao</p><p><a href=\"https://canifa.com/nu/danh-muc-san-pham/ao-phong-khong-co/ao-phong-nu-co-ban-co-tron-6ts19a001.html#product-detail-tab-content-2\">CHẤT LIỆU</a></p><p><strong>95% cotton 5% spandex</strong></p><p>HƯỚNG DẪN SỬ DỤNG</p><p>Giặt máy ở chế độ nhẹ, nhiệt độ thường.<br>không sử dụng hóa chất tẩy có chứa clo.<br>Phơi trong bóng mát.<br>Sấy khô ở nhiệt độ thường.<br>Là ở nhiệt độ thấp 110 độ c.<br>Giặt với sản phẩm cùng màu.<br>Không là lên chi tiết trang trí</p><p><a href=\"https://canifa.com/nu/danh-muc-san-pham/ao-phong-khong-co/ao-phong-nu-co-ban-co-tron-6ts19a001.html#product-detail-tab-content-4\">THÔNG SỐ NGƯỜI MẪU</a></p><p>Chiều cao: 174cm<br>Cân nặng: 48kg<br>Mặc áo size: M</p>', 0.00, 1, '2020-08-09 08:39:30', '2020-08-11 07:12:30', 1),
+(156, 'That Lung', 'https://firebasestorage.googleapis.com/v0/b/reactjs-8c7de.appspot.com/o/images%2Fbanner-07.jpg?alt=media&token=f87c373b-2d94-4c5b-b9e0-51b958baad15', 1, 50, 100, 40, '<p>Hiện sản phẩm chỉ còn ở cửa hàng</p>', '<p><a href=\"https://canifa.com/nu/danh-muc-san-pham/ao-phong-khong-co/ao-phong-nu-co-ban-co-tron-6ts19a001.html#product-detail-tab-content-1\">MÔ TẢ</a></p><p>Áo phông chất liệuSingle 95% cotton 5% spandex.<br>Phom dáng Regular fit, cổ tròn, tay ngắn.<br>Hàng basic. Phù hợp mặc quanh năm, thoải mái, dễ dàng.<br>Dễ kết hợp&nbsp; với chân váy, quần denim, khaki, giày thể thao</p><p><a href=\"https://canifa.com/nu/danh-muc-san-pham/ao-phong-khong-co/ao-phong-nu-co-ban-co-tron-6ts19a001.html#product-detail-tab-content-2\">CHẤT LIỆU</a></p><p><strong>95% cotton 5% spandex</strong></p><p>HƯỚNG DẪN SỬ DỤNG</p><p>Giặt máy ở chế độ nhẹ, nhiệt độ thường.<br>không sử dụng hóa chất tẩy có chứa clo.<br>Phơi trong bóng mát.<br>Sấy khô ở nhiệt độ thường.<br>Là ở nhiệt độ thấp 110 độ c.<br>Giặt với sản phẩm cùng màu.<br>Không là lên chi tiết trang trí</p><p><a href=\"https://canifa.com/nu/danh-muc-san-pham/ao-phong-khong-co/ao-phong-nu-co-ban-co-tron-6ts19a001.html#product-detail-tab-content-4\">THÔNG SỐ NGƯỜI MẪU</a></p><p>Chiều cao: 174cm<br>Cân nặng: 48kg<br>Mặc áo size: M</p>', 0.00, 1, '2020-08-09 08:40:23', '2020-08-11 07:12:30', 1);
 
 -- --------------------------------------------------------
 
@@ -651,6 +699,12 @@ ALTER TABLE `categories`
   ADD UNIQUE KEY `categories_name_unique` (`cate_name`);
 
 --
+-- Indexes for table `contacts`
+--
+ALTER TABLE `contacts`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `invoices`
 --
 ALTER TABLE `invoices`
@@ -666,6 +720,12 @@ ALTER TABLE `invoice_detail`
 -- Indexes for table `migrations`
 --
 ALTER TABLE `migrations`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `news`
+--
+ALTER TABLE `news`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -702,19 +762,31 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `categories`
 --
 ALTER TABLE `categories`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=45;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=44;
+
+--
+-- AUTO_INCREMENT for table `contacts`
+--
+ALTER TABLE `contacts`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 
 --
 -- AUTO_INCREMENT for table `invoices`
 --
 ALTER TABLE `invoices`
-  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT for table `migrations`
 --
 ALTER TABLE `migrations`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+
+--
+-- AUTO_INCREMENT for table `news`
+--
+ALTER TABLE `news`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `products`
